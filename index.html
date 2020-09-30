@@ -18,44 +18,89 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rambla&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/styles.css" />
   </head>
 
   <body>
     <div class="container">
       <div class="App">
-        <nav class="navbar navbar-light bg-light">
-          <a class="navbar-brand">Cloud Weather</a>
-          <form class="form-inline">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Enter a city..."
-              aria-label="Recipient's username with two button addons"
-              aria-describedby="button-addon4"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-              Search
-            </button>
-            <button class="btn btn-outline-secondary" type="button">
-              <i class="fas fa-map-marked-alt"></i>
-            </button>
-          </form>
-        </nav>
+        <header>
+          <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand">Cloud Weather</a>
+            <form class="form-inline">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter a city..."
+                aria-label="Recipient's username with two button addons"
+                aria-describedby="button-addon4"
+              />
+              <button
+                class="btn btn-outline-success my-2 my-sm-0"
+                type="submit"
+              >
+                Search
+              </button>
+              <button class="btn btn-outline-secondary" type="button">
+                <i class="fas fa-map-marked-alt"></i>
+              </button>
+            </form>
+          </nav>
 
-        <div class="navigation-tabs">
-          <ul class="nav nav-tabs justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-          </ul>
-        </div>
+          <div class="navigation-tabs">
+            <ul class="nav nav-tabs justify-content-center nav-fill">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Now</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Hourly</a>
+              </li>
+            </ul>
+          </div>
+        </header>
+        <main class="actual-weather">
+          <div class="row">
+            <div class="col-4">
+              <h1 id="current-temp"></h1>
+              <h2></h2>
+              <p class="date" id="currentDayTime"></p>
+              <p class="weather" id="weather-description"></p>
+            </div>
+            <div class="col-4">
+              <img src="media/sunny2.png" alt="sunny" width="150" />
+            </div>
+            <div class="col-4">
+              <div
+                class="btn-toolbar"
+                role="toolbar"
+                aria-label="Toolbar with button groups"
+              >
+                <div
+                  class="btn-group mr-2"
+                  role="group"
+                  aria-label="First group"
+                >
+                  <button type="button" class="btn btn-secondary">°C</button>
+                  <button type="button" class="btn btn-secondary">°F</button>
+                </div>
+              </div>
+              <section class="actual-details">
+                <p class="wind">Wind: <span id="current-wind"></span> km/h</p>
+
+                <p class="humidity">
+                  Humidity: <span id="current-humidity"></span>%
+                </p>
+              </section>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
     <p class="open-source-code">
