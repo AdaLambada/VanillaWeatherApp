@@ -55,3 +55,24 @@ function search(city) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showWeather);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#site-search").value;
+  let locationInput = document.querySelector("h2");
+
+  if (city) {
+    locationInput.innerHTML = city;
+  } else {
+    alert("Where are you right now? Please enter a city!");
+    locationInput.innerHTML = "anywhere";
+  }
+  let apiKey = "e38fef9e5177e1785bd20f248f3480f4";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(url).then(showWeather);
+}
+
+let form = document.querySelector("#city-search");
+form.addEventListener("submit", handleSubmit);
+
+search("New York");
