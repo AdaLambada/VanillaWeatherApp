@@ -34,3 +34,24 @@ function showWeather(response) {
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].main;
 }
+
+function showPosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+
+  let apiKey = "e38fef9e5177e1785bd20f248f3480f4";
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(url).then(showWeather);
+}
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let needleButton = document.querySelector("#loc-now");
+needleButton.addEventListener("click", getCurrentPosition);
+
+function search(city) {
+  let apiKey = "e38fef9e5177e1785bd20f248f3480f4";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(url).then(showWeather);
+}
