@@ -1,3 +1,24 @@
+.App {
+  border: 5px solid #ffc93c;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  width: 800px;
+  height: 750px;
+}
+
+.form-control {
+  padding-left: 50px;
+}
+
+.form-inline {
+  text-align: center;
+}
+
 .navbar-brand {
   font-family: "Pacifico", cursive;
+  border-radius: 15px;
+  border: 5px solid transparent;
 }

@@ -1,43 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Weather App</title>
-    <script src="https://kit.fontawesome.com/93b53c15fb.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="src/styles.css" />
-</head>
+    <script
+      src="https://kit.fontawesome.com/93b53c15fb.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">Vanilla Weather</a>
-    <form class="form-inline">
-        <input type="text" class="form-control" placeholder="Enter a city..."
-            aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        <button class="btn btn-outline-secondary" type="button"><i class="fas fa-map-marked-alt"></i></button>
-    </form>
-</nav>
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Enter a city..."
-                aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-            <div class="input-group-append" id="button-addon4">
-                <button class="btn btn-outline-secondary" type="button">Search</button>
+      <div class="App">
+        <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand">Cloud Weather</a>
+          <form class="form-inline">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter a city..."
+              aria-label="Recipient's username with two button addons"
+              aria-describedby="button-addon4"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+            <button class="btn btn-outline-secondary" type="button">
+              <i class="fas fa-map-marked-alt"></i>
+            </button>
+          </form>
+        </nav>
 
-                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-map-marked-alt"></i></button>
-            </div>
-
-            <p class="open-source-code">
-                <a href="https://github.com/AdaLambada/VanillaWeatherApp.git" target="_blank">Open-source code
-                </a>
-                by C.Biegert
-            </p>
-            <script src="src/index.js"></script>
-</body>
-
+        <div class="navigation-tabs">
+          <ul class="nav nav-tabs justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="open-source-code">
+      <a
+        href="https://github.com/AdaLambada/VanillaWeatherApp.git"
+        target="_blank"
+        >Open-source code
+      </a>
+      by C.Biegert
+    </p>
+    <script src="src/index.js"></script>
+  </body>
 </html>
