@@ -1,5 +1,6 @@
 .App {
-  border: 5px solid #ffc93c;
+  background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+  border: 5px solid #a6f6f1;
   border-radius: 15px;
   display: block;
   margin: 0 auto;
@@ -22,9 +23,20 @@
 .nav-item {
   font-family: "Rambla", sans-serif;
   font-weight: bold;
-  color: black;
+  color: #213e3b;
+}
+
+.actual-weather {
+  color: #213e3b;
 }
 
 .actual-details {
   margin-top: 20px;
+}
+
+.row {
+  margin-top: 50px;
+}
+.col-4 {
+  text-align: center;
 }
