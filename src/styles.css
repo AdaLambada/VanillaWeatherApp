@@ -33,6 +33,22 @@
   margin-top: 20px;
 }
 
+.mr-2 {
+  margin-left: 75px;
+}
+
+.btn-info .active {
+  color: #a6f6f1;
+  font-weight: bold;
+  cursor: mouse;
+}
+
+.btn-info .active:hover {
+  color: #e8ffff;
+  text-decoration: none;
+  cursor: default;
+}
+
 .row {
   margin-top: 50px;
 }
