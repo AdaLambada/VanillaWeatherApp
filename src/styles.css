@@ -30,6 +30,15 @@
   color: #213e3b;
 }
 
+.nav-link {
+  text-decoration: none;
+  color: #41aea9;
+}
+
+.nav-link:hover {
+  color: #213e3b;
+}
+
 h1 {
   font-size: 3rem;
 }
