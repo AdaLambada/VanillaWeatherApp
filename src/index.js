@@ -23,8 +23,11 @@ dateToday.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#current-temp");
-  currentTemperature.innerHTML = `${temperature}°C`;
   let currentCity = document.querySelector("h2");
+
+  celciusTemperature = response.data.main.temp;
+
+  currentTemperature.innerHTML = `${temperature}°C`;
   currentCity.innerHTML = response.data.name;
   document.querySelector("#current-humidity").innerHTML =
     response.data.main.humidity;
@@ -42,8 +45,6 @@ function showWeather(response) {
     "alt",
     `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
   );
-  const newLocal = response.data.main.temp;
-  celciusTemperature = newLocal;
 }
 
 function showPosition(position) {
