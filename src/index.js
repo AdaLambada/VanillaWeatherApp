@@ -20,6 +20,20 @@ if (currentMinutes < 10) {
 }
 dateToday.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
 function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#current-temp");
@@ -62,10 +76,41 @@ function getCurrentPosition() {
 let needleButton = document.querySelector("#loc-now");
 needleButton.addEventListener("click", getCurrentPosition);
 
+function showForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+    <div class="col-2">
+      <h1>
+        ${formatHours(forecast.dt * 1000)}
+      </h1>
+      <img
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      />
+      <div class="real-feel-temp">
+        <strong>
+          ${Math.round(forecast.main.temp_max)}°
+        </strong>/
+        ${Math.round(forecast.main.temp_min)}°
+      </div>
+    </div>
+  `;
+  }
+}
+
 function search(city) {
   let apiKey = "e38fef9e5177e1785bd20f248f3480f4";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showWeather);
+
+  url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(showForecast);
 }
 
 function handleSubmit(event) {
