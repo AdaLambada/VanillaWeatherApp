@@ -69,6 +69,9 @@ function showPosition(position) {
   let apiKey = "e38fef9e5177e1785bd20f248f3480f4";
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showWeather);
+
+  url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(showForecast);
 }
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
